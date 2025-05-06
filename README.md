@@ -8,32 +8,35 @@ This project is a Java Swing application designed to display and allow users to 
 
 ## Object-Oriented Programming (OOP) Concepts Utilized
 
-The `CS2_SkinRating.java` file demonstrates several key OOP concepts:
+The project, now structured across multiple Java files (`CS2_SkinRating.java`, `TopBarPanel.java`, `SidebarPanel.java`, `CardDisplayPanel.java`, `SkinCard.java`, `BottomBarPanel.java`), demonstrates several key OOP concepts:
 
 ### 1. Classes and Objects
 
 *   **Class:** A blueprint for creating objects.
-    *   `CS2_SkinRating`: This is the main class of the application, defining the structure and behavior of the main window.
-    *   Swing classes like `JFrame`, `JPanel`, `JButton`, `JLabel`, `ImageIcon`, `JScrollPane`, `Dimension`, `Color`, `Font`, `BorderLayout`, `GridLayout`, `FlowLayout`, `BoxLayout`, `EmptyBorder`, `BorderFactory` are used extensively. Each of these defines a type of UI component or layout manager.
+    *   `CS2_SkinRating`: The main application window class.
+    *   `TopBarPanel`, `SidebarPanel`, `CardDisplayPanel`, `SkinCard`, `BottomBarPanel`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
+    *   Swing classes like `JFrame`, `JPanel`, `JButton`, `JLabel`, etc., are used extensively.
 *   **Object:** An instance of a class.
-    *   `new CS2_SkinRating()`: Creates an object (an instance) of the `CS2_SkinRating` class, which represents the application window.
-    *   `JPanel mainPanel = new JPanel(...)`: Creates an object of the `JPanel` class.
-    *   `JButton discordButton = new JButton(...)`: Creates an object of the `JButton` class.
-    *   Each UI element you see (labels, buttons, panels) is an object created from its respective class.
+    *   `new CS2_SkinRating()`: Creates an instance of the main application window.
+    *   `TopBarPanel topBarPanel = new TopBarPanel()`: Creates an instance of the `TopBarPanel`.
+    *   `SkinCard card = new SkinCard(...)`: Creates an instance of a `SkinCard`.
 
 ### 2. Inheritance (IS-A Relationship)
 
 *   **Concept:** A mechanism where a new class (subclass or derived class) inherits properties and methods from an existing class (superclass or base class).
 *   **Example:**
     *   `public class CS2_SkinRating extends JFrame`
-        *   The `CS2_SkinRating` class *is a* `JFrame`. It inherits all the characteristics and functionalities of a `JFrame` (like having a title bar, content pane, ability to be resized, closed, etc.) and can add its own specific features or override existing ones.
+        *   The `CS2_SkinRating` class *is a* `JFrame`.
+    *   `public class TopBarPanel extends JPanel` (and similarly for `SidebarPanel`, `CardDisplayPanel`, `SkinCard`, `BottomBarPanel`)
+        *   These custom panel classes *are* `JPanel`s, inheriting JPanel's functionalities and adding specialized content and behavior.
 
 ### 3. Encapsulation
 
-*   **Concept:** Bundling data (attributes) and methods (functions) that operate on the data within a single unit (a class). It also involves restricting direct access to some of an object's components, which is a means of preventing unintended interference and misuse of the methods and data.
+*   **Concept:** Bundling data (attributes) and methods (functions) that operate on the data within a single unit (a class). It also involves restricting direct access to some of an object's components.
 *   **Example:**
-    *   The `CS2_SkinRating` class encapsulates all the UI components (`mainPanel`, `sidebarPanel`, `cardPanel`, buttons, labels, etc.) and the logic for their setup and layout within its constructor.
-    *   While many components are created and manipulated within the constructor in this example, in a more complex application, attributes (like the `JPanel`s) would typically be declared as instance variables (often `private`) and accessed or modified through the class's methods, further strengthening encapsulation.
+    *   The `CS2_SkinRating` class encapsulates instances of `TopBarPanel`, `SidebarPanel`, `JScrollPane` (which contains `CardDisplayPanel`), and `BottomBarPanel`.
+    *   Each specialized panel class (e.g., `TopBarPanel`) encapsulates its own UI components (like `JLabel` for the title, `JButton`s for Discord/Ko-Fi) and the logic for their setup and layout. For instance, the creation and styling of the "Join Discord" button are handled entirely within `TopBarPanel`.
+    *   The `SkinCard` class encapsulates the image label and name label for a single skin, along with the logic to load and display the image.
 
 ### 4. Abstraction
 
@@ -64,10 +67,12 @@ The `CS2_SkinRating.java` file demonstrates several key OOP concepts:
 
 *   **Concept:** Building complex objects by combining simpler objects. One object "has an" instance of another object.
 *   **Example:**
-    *   The `CS2_SkinRating` (which is a `JFrame`) *has a* `JPanel` (e.g., `mainPanel`).
-    *   The `mainPanel` *has* other `JPanel`s (e.g., `topBarPanel`, `sidebarPanel`, `cardPanel`).
-    *   The `topBarPanel` *has a* `JLabel` (`titleLabel`) and another `JPanel` (`topRightButtonsPanel`).
-    *   This "has-a" relationship is fundamental to how Swing UIs are constructed: frames contain panels, and panels contain other components like buttons and labels.
-    *   `mainPanel.add(topBarPanel, BorderLayout.NORTH);` explicitly shows `mainPanel` composing `topBarPanel`.
+    *   The `CS2_SkinRating` (which is a `JFrame`) *has a* `TopBarPanel`, a `SidebarPanel`, a `JScrollPane` (which in turn *has a* `CardDisplayPanel`), and a `BottomBarPanel`.
+        *   `mainPanel.add(topBarPanel, BorderLayout.NORTH);`
+        *   `mainPanel.add(sidebarPanel, BorderLayout.WEST);`
+    *   The `CardDisplayPanel` *has multiple* `SkinCard` objects.
+        *   `add(card);` (within `CardDisplayPanel`'s loop)
+    *   The `TopBarPanel` *has a* `JLabel` (`titleLabel`) and another `JPanel` (`topRightButtonsPanel`).
+    *   This demonstrates how the main application window is composed of several distinct, manageable UI panel objects, each responsible for a part of the overall interface.
 
 This application effectively uses these OOP principles to create a modular, maintainable, and extensible GUI structure.
