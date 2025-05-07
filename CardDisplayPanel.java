@@ -7,7 +7,7 @@ public class CardDisplayPanel extends JPanel {
 
     public CardDisplayPanel() {
         super(new GridLayout(0, 4, 10, 10));
-        setBackground(new Color(55, 55, 55));
+        setBackground(new Color(65, 65, 65)); // Brighter Color Update
         setBorder(new EmptyBorder(10,10,10,10));
 
         String[] imageFileNames = {

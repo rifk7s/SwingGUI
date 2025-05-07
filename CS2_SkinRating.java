@@ -1,7 +1,6 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-//TODO: button.setFocusPainted(false); // Remove focus border on buttons 
 
 public class CS2_SkinRating extends JFrame {
 
@@ -21,11 +20,10 @@ public class CS2_SkinRating extends JFrame {
         TopBarPanel topBarPanel = new TopBarPanel();
         mainPanel.add(topBarPanel, BorderLayout.NORTH);
 
-        // Sidebar Panel (West)
+        // Sidebar Panel
         SidebarPanel sidebarPanel = new SidebarPanel();
-        mainPanel.add(sidebarPanel, BorderLayout.WEST);
 
-        // Content Panel with Cards (Center)
+        // Content Panel with Cards
         CardDisplayPanel cardDisplayPanel = new CardDisplayPanel();
         
         // Scrollbar for Content Panel
@@ -34,7 +32,16 @@ public class CS2_SkinRating extends JFrame {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setBorder(BorderFactory.createEmptyBorder()); // Remove default border
         scrollPane.getVerticalScrollBar().setUnitIncrement(16); // Improve scroll speed
-        mainPanel.add(scrollPane, BorderLayout.CENTER);
+
+        // Split Pane for Sidebar and Content
+        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, sidebarPanel, scrollPane);
+        splitPane.setDividerLocation(170); // Initial width for the sidebar + some padding
+        splitPane.setDividerSize(2); // Adjust Divider Size into any pixel () value
+        splitPane.setBorder(BorderFactory.createEmptyBorder()); // Remove split pane border if desired
+        splitPane.setContinuousLayout(true); // Optional: updates layout continuously while dragging
+        splitPane.setResizeWeight(0); // Optional: sidebar width is fixed, content area resizes
+
+        mainPanel.add(splitPane, BorderLayout.CENTER); // Add JSplitPane instead of sidebar and scrollpane directly
 
         // Bottom Button Panel (South)
         BottomBarPanel bottomBarPanel = new BottomBarPanel();
@@ -53,5 +60,4 @@ public class CS2_SkinRating extends JFrame {
             }
         });
     }
-
 }

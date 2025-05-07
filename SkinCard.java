@@ -5,7 +5,9 @@ public class SkinCard extends JPanel {
 
     public SkinCard(String imageNameWithExtension, String imagePathPrefix) {
         super(new BorderLayout());
-        setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 2));
+        // Set the name of the card, can be useful for the listener
+        setName(imageNameWithExtension.replace(".png", ""));
+        setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 2)); // Initial border, will be managed by listener
         setBackground(new Color(70, 70, 70)); // Card background
 
         String skinName = imageNameWithExtension.replace("AWP_", "").replace(".png", "");
@@ -43,5 +45,9 @@ public class SkinCard extends JPanel {
         imageLabel.setForeground(Color.WHITE);
         imageLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(imageLabel, BorderLayout.CENTER);
+
+        // Add the mouse listener
+        // Listener interactionHandler = new Listener(this);
+        // this.addMouseListener(interactionHandler);
     }
 }
