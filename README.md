@@ -8,13 +8,13 @@ This project is a Java Swing application designed to display and allow users to 
 
 ## Object-Oriented Programming (OOP) Concepts Utilized
 
-The project, now structured across multiple Java files (`CS2_SkinRating.java`, `TopBarPanel.java`, `SidebarPanel.java`, `CardDisplayPanel.java`, `SkinCard.java`, `BottomBarPanel.java`), demonstrates several key OOP concepts:
+The project, now structured across multiple Java files (located in the `src` directory: `src/CS2_SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`, `src/Listener.java`), demonstrates several key OOP concepts:
 
 ### 1. Classes and Objects
 
 *   **Class:** A blueprint for creating objects.
-    *   `CS2_SkinRating`: The main application window class.
-    *   `TopBarPanel`, `SidebarPanel`, `CardDisplayPanel`, `SkinCard`, `BottomBarPanel`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
+    *   `src/CS2_SkinRating.java`: The main application window class.
+    *   `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`, `src/Listener.java`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
     *   Swing classes like `JFrame`, `JPanel`, `JButton`, `JLabel`, etc., are used extensively.
 *   **Object:** An instance of a class.
     *   `new CS2_SkinRating()`: Creates an instance of the main application window.
@@ -76,3 +76,25 @@ The project, now structured across multiple Java files (`CS2_SkinRating.java`, `
     *   This demonstrates how the main application window is composed of several distinct, manageable UI panel objects, each responsible for a part of the overall interface.
 
 This application effectively uses these OOP principles to create a modular, maintainable, and extensible GUI structure.
+
+## Compiling and Running from the Command Line
+
+To compile and run this project from your command line or terminal:
+
+1.  **Navigate to the Project Root:**
+    Open your terminal or command prompt and navigate to the root directory of the project (e.g., `c:\Users\rifk\Desktop\OOP\SwingGui\`).
+
+2.  **Compile the Java Files:**
+    All Java source files are located in the `src` directory. Use the following command to compile them. The compiled `.class` files will also be placed in the `src` directory.
+    ```bash
+    javac src/*.java
+    ```
+    (On Windows, you might also use `javac src\*.java`)
+
+3.  **Run the Application:**
+    After successful compilation, run the main application class (`CS2_SkinRating`). You need to specify the `src` directory in the classpath so that Java can find the compiled `.class` files.
+    ```bash
+    java -cp src CS2_SkinRating
+    ```
+
+Make sure you have a Java Development Kit (JDK) installed and configured correctly on your system for these commands to work.
