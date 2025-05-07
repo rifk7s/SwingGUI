@@ -47,7 +47,7 @@ public class SkinCard extends JPanel {
         add(imageLabel, BorderLayout.CENTER);
 
         // Add the mouse listener
-        Listener interactionHandler = new Listener(this);
-        this.addMouseListener(interactionHandler);
+        // Listener interactionHandler = new Listener(this);
+        // this.addMouseListener(interactionHandler);
     }
 }
