@@ -8,13 +8,13 @@ This project is a Java Swing application designed to display and allow users to 
 
 ## Object-Oriented Programming (OOP) Concepts Utilized
 
-The project, now structured across multiple Java files (located in the `src` directory: `src/CS2_SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`, `src/Listener.java`), demonstrates several key OOP concepts:
+The project, now structured across multiple Java files (located in the `src` directory: `src/CS2_SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`, `src/Listener.java`), demonstrates several key OOP concepts:
 
 ### 1. Classes and Objects
 
 *   **Class:** A blueprint for creating objects.
     *   `src/CS2_SkinRating.java`: The main application window class.
-    *   `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`, `src/Listener.java`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
+    *   `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`, `src/Listener.java`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
     *   Swing classes like `JFrame`, `JPanel`, `JButton`, `JLabel`, etc., are used extensively.
 *   **Object:** An instance of a class.
     *   `new CS2_SkinRating()`: Creates an instance of the main application window.
@@ -27,8 +27,12 @@ The project, now structured across multiple Java files (located in the `src` dir
 *   **Example:**
     *   `public class CS2_SkinRating extends JFrame`
         *   The `CS2_SkinRating` class *is a* `JFrame`.
-    *   `public class TopBarPanel extends JPanel` (and similarly for `SidebarPanel`, `CardDisplayPanel`, `SkinCard`, `BottomBarPanel`)
+    *   `public class TopBarPanel extends JPanel` (and similarly for `CardDisplayPanel`, `SkinCard`, `BottomBarPanel`)
         *   These custom panel classes *are* `JPanel`s, inheriting JPanel's functionalities and adding specialized content and behavior.
+    *   `public class SidebarPanel extends Button`
+        *   The `SidebarPanel` class *is a* `Button`.
+    *   `public class Button extends JPanel`
+        *   The `Button` class *is a* `JPanel`.
 
 ### 3. Encapsulation
 

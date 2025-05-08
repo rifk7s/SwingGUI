@@ -1,14 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class SidebarPanel extends JPanel {
+public class SidebarPanel extends Button { // Changed to extend Button
 
     public SidebarPanel() {
-        super();
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBackground(new Color(50, 50, 50)); // Match main panel background
-        setPreferredSize(new Dimension(170, 0)); // Sidebar width
-        setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, new Color(40, 40, 40))); // Keep 1px right border
+        super(); // Call to superclass (Button) constructor
 
         String[] sidebarButtonLabels = {
             "Home", 
