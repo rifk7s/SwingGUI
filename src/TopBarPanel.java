@@ -20,11 +20,13 @@ public class TopBarPanel extends JPanel {
         discordButton.setBackground(new Color(88, 101, 242)); // Discord blue
         discordButton.setForeground(Color.WHITE);
         discordButton.setFocusPainted(false);
+        discordButton.setBorderPainted(false); 
 
         JButton kofiButton = new JButton("Buy us a Ko-Fi");
         kofiButton.setBackground(new Color(255, 84, 82)); // Ko-Fi red
         kofiButton.setForeground(Color.WHITE);
         kofiButton.setFocusPainted(false);
+        kofiButton.setBorderPainted(false); 
 
         topRightButtonsPanel.add(discordButton);
         topRightButtonsPanel.add(kofiButton);

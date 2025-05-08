@@ -14,10 +14,12 @@ public class BottomBarPanel extends JPanel {
         rateButton.setBackground(new Color(75, 75, 75));
         rateButton.setForeground(Color.WHITE);
         rateButton.setFocusPainted(false);
+        rateButton.setBorderPainted(false); 
 
         saveButton.setBackground(new Color(75, 75, 75));
         saveButton.setForeground(Color.WHITE);
         saveButton.setFocusPainted(false);
+        saveButton.setBorderPainted(false); 
 
         add(rateButton);
         add(saveButton);
