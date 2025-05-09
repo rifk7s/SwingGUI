@@ -8,13 +8,13 @@ This project is a Java Swing application designed to display and allow users to 
 
 ## Object-Oriented Programming (OOP) Concepts Utilized
 
-The project, now structured across multiple Java files (located in the `src` directory: `src/CS2_SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`, `src/Listener.java`), demonstrates several key OOP concepts:
+The project, now structured across multiple Java files (located in the `src` directory: `src/CS2_SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`), demonstrates several key OOP concepts:
 
 ### 1. Classes and Objects
 
 *   **Class:** A blueprint for creating objects.
     *   `src/CS2_SkinRating.java`: The main application window class.
-    *   `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`, `src/Listener.java`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
+    *   `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
     *   Swing classes like `JFrame`, `JPanel`, `JButton`, `JLabel`, etc., are used extensively.
 *   **Object:** An instance of a class.
     *   `new CS2_SkinRating()`: Creates an instance of the main application window.
