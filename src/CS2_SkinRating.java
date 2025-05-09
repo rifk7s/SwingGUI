@@ -20,12 +20,12 @@ public class CS2_SkinRating extends JFrame {
         TopBarPanel topBarPanel = new TopBarPanel();
         mainPanel.add(topBarPanel, BorderLayout.NORTH);
 
-        // Sidebar Panel
-        SidebarPanel sidebarPanel = new SidebarPanel();
-
         // Content Panel with Cards
         CardDisplayPanel cardDisplayPanel = new CardDisplayPanel();
-        
+
+        // Sidebar Panel
+        SidebarPanel sidebarPanel = new SidebarPanel(cardDisplayPanel); // Pass cardDisplayPanel
+
         // Scrollbar for Content Panel
         JScrollPane scrollPane = new JScrollPane(cardDisplayPanel);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
