@@ -16,17 +16,9 @@ public class TopBarPanel extends JPanel {
         JPanel topRightButtonsPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         topRightButtonsPanel.setOpaque(false); // Make it transparent
 
-        JButton discordButton = new JButton("Join Discord");
-        discordButton.setBackground(new Color(88, 101, 242)); // Discord blue
-        discordButton.setForeground(Color.WHITE);
-        discordButton.setFocusPainted(false);
-        discordButton.setBorderPainted(false); 
+        JButton discordButton = Button.createButton("Join Discord", new Color(88, 101, 242)); // Use factory method with custom color
 
-        JButton kofiButton = new JButton("Buy us a Ko-Fi");
-        kofiButton.setBackground(new Color(255, 84, 82)); // Ko-Fi red
-        kofiButton.setForeground(Color.WHITE);
-        kofiButton.setFocusPainted(false);
-        kofiButton.setBorderPainted(false); 
+        JButton kofiButton = Button.createButton("Buy us a Ko-Fi", new Color(255, 84, 82)); // Use factory method with custom color
 
         topRightButtonsPanel.add(discordButton);
         topRightButtonsPanel.add(kofiButton);

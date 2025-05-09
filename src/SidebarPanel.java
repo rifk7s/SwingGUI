@@ -21,7 +21,7 @@ public class SidebarPanel extends Button { // Changed to extend Button
         int buttonHeightPadding = 10; // Padding for button height
 
         for (String btnText : sidebarButtonLabels) {
-            JButton button = new JButton(btnText);
+            JButton button = Button.createButton(btnText); // Use factory method
             
             // Set preferred and maximum size for the button to control its width
             Dimension buttonSize = new Dimension(buttonWidth, button.getPreferredSize().height + buttonHeightPadding);
@@ -29,11 +29,6 @@ public class SidebarPanel extends Button { // Changed to extend Button
             button.setMaximumSize(buttonSize); // Constrain button width
             
             button.setAlignmentX(Component.CENTER_ALIGNMENT); // Align button itself in the center of its allocated space
-
-            button.setBackground(new Color(75, 75, 75));
-            button.setForeground(Color.WHITE);
-            button.setFocusPainted(false);
-            button.setBorderPainted(false);
 
             add(button);
             add(Box.createRigidArea(new Dimension(0, 10))); // Spacing between buttons

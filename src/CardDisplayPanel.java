@@ -17,7 +17,7 @@ public class CardDisplayPanel extends JPanel {
             "AWP_Man-o'-war.png", "AWP_Medusa.png", "AWP_Neo Noir.png",
             "AWP_Printstream.png", "AWP_The Prince.png", "AWP_Wildfire.png"
         };
-        String imagePathPrefix = "img" + File.separator;
+        String imagePathPrefix = "img" + File.separator + "AWP" + File.separator; // Updated path
 
         for (String imageNameWithExtension : imageFileNames) {
             SkinCard card = new SkinCard(imageNameWithExtension, imagePathPrefix);

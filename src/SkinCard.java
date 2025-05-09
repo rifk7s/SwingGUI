@@ -27,8 +27,8 @@ public class SkinCard extends JPanel {
             if (originalWidth > 0 && originalHeight > 0) {
                 int newHeight = (desiredWidth * originalHeight) / originalWidth;
                 if (newHeight > 120) {
-                     newHeight = 120;
-                     desiredWidth = (newHeight * originalWidth) / originalHeight;
+                    newHeight = 120;
+                    desiredWidth = (newHeight * originalWidth) / originalHeight;
                 }
                 Image scaledImage = image.getScaledInstance(desiredWidth, newHeight, Image.SCALE_SMOOTH);
                 imageLabel.setIcon(new ImageIcon(scaledImage));
