@@ -1,12 +1,14 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import javax.swing.WindowConstants; // Added for static access
+import javax.swing.ScrollPaneConstants; // Added for static access
 
 public class CS2_SkinRating extends JFrame {
 
     public CS2_SkinRating() {
         setTitle("CS2 Skin Rating");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Changed to WindowConstants
         setPreferredSize(new Dimension(1024, 768));
         getContentPane().setBackground(new Color(45, 45, 45)); // Dark gray background
 
@@ -28,8 +30,8 @@ public class CS2_SkinRating extends JFrame {
 
         // Scrollbar for Content Panel
         JScrollPane scrollPane = new JScrollPane(cardDisplayPanel);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED); // Changed to ScrollPaneConstants
+        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER); // Changed to ScrollPaneConstants
         scrollPane.setBorder(BorderFactory.createEmptyBorder()); // Remove default border
         scrollPane.getVerticalScrollBar().setUnitIncrement(16); // Improve scroll speed
 
@@ -53,11 +55,6 @@ public class CS2_SkinRating extends JFrame {
 
     public static void main(String[] args) {
         // Run the GUI construction on the Event Dispatch Thread
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new CS2_SkinRating().setVisible(true);
-            }
-        });
+        SwingUtilities.invokeLater(() -> new CS2_SkinRating().setVisible(true)); // Changed to lambda
     }
 }

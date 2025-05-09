@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 import java.util.Random;
 
 public class SkinCard extends JPanel {
+    private final Random random = new Random(); // Made Random an instance variable
 
     public SkinCard(String imageNameWithExtension, String imagePathPrefix) {
         super(new BorderLayout());
@@ -68,7 +69,6 @@ public class SkinCard extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 // Generate random details for the dialog
-                Random random = new Random();
                 String[] conditions = {"Factory New", "Minimal Wear", "Field-Tested", "Well-Worn", "Battle-Scarred"};
                 String condition = conditions[random.nextInt(conditions.length)];
                 float floatValue = random.nextFloat();
@@ -76,7 +76,7 @@ public class SkinCard extends JPanel {
                 double price = 5 + (5000 - 5) * random.nextDouble(); // Random price between $5 and $5000
 
                 String details = String.format(
-                    "Skin: %s\nCondition: %s\nFloat Value: %.4f\nStattrak™ Kills: %d\nEstimated Price: $%.2f",
+                    "Skin: %s%nCondition: %s%nFloat Value: %.4f%nStattrak™ Kills: %d%nEstimated Price: $%.2f",
                     originalSkinName, condition, floatValue, stattrak, price // Use the final originalSkinName
                 );
 
