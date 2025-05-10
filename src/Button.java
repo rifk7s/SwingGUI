@@ -7,9 +7,9 @@ public class Button extends JPanel {
         super();
         // Setup layout and styling properties
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setBackground(new Color(50, 50, 50)); // Match main panel background
+        setBackground(new Color(50, 50, 50)); 
         setPreferredSize(new Dimension(170, 0)); // Sidebar width
-        setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, new Color(40, 40, 40))); // Keep 1px right border
+        setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, new Color(40, 40, 40))); 
     }
 
     // Factory method for creating a JButton with default styling

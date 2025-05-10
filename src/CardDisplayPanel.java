@@ -7,7 +7,7 @@ public class CardDisplayPanel extends JPanel {
 
     public CardDisplayPanel() {
         super(new GridLayout(0, 4, 10, 10));
-        setBackground(new Color(65, 65, 65)); // Brighter Color Update
+        setBackground(new Color(65, 65, 65)); 
         setBorder(new EmptyBorder(10,10,10,10));
         updateDisplay("AWP"); // Load AWP skins by default
     }

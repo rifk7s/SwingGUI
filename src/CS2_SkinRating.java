@@ -8,7 +8,7 @@ public class CS2_SkinRating extends JFrame {
 
     public CS2_SkinRating() {
         setTitle("CS2 Skin Rating");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Changed to WindowConstants
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
         setPreferredSize(new Dimension(1024, 768));
         getContentPane().setBackground(new Color(45, 45, 45)); // Dark gray background
 
@@ -30,8 +30,8 @@ public class CS2_SkinRating extends JFrame {
 
         // Scrollbar for Content Panel
         JScrollPane scrollPane = new JScrollPane(cardDisplayPanel);
-        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED); // Changed to ScrollPaneConstants
-        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER); // Changed to ScrollPaneConstants
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED); 
+        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER); 
         scrollPane.setBorder(BorderFactory.createEmptyBorder()); // Remove default border
         scrollPane.getVerticalScrollBar().setUnitIncrement(16); // Improve scroll speed
 
