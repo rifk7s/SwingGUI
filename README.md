@@ -8,16 +8,16 @@ This project is a Java Swing application designed to display and allow users to 
 
 ## Object-Oriented Programming (OOP) Concepts Utilized
 
-The project, now structured across multiple Java files (located in the `src` directory: `src/CS2_SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`), demonstrates several key OOP concepts:
+The project, now structured across multiple Java files (located in the `src` directory: `src/CS2SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`), demonstrates several key OOP concepts:
 
 ### 1. Classes and Objects
 
 *   **Class:** A blueprint for creating objects.
-    *   `src/CS2_SkinRating.java`: The main application window class.
+    *   `src/CS2SkinRating.java`: The main application window class.
     *   `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
     *   Swing classes like `JFrame`, `JPanel`, `JButton`, `JLabel`, etc., are used extensively.
 *   **Object:** An instance of a class.
-    *   `new CS2_SkinRating()`: Creates an instance of the main application window.
+    *   `new CS2SkinRating()`: Creates an instance of the main application window.
     *   `TopBarPanel topBarPanel = new TopBarPanel()`: Creates an instance of the `TopBarPanel`.
     *   `SkinCard card = new SkinCard(...)`: Creates an instance of a `SkinCard`.
 
@@ -25,8 +25,8 @@ The project, now structured across multiple Java files (located in the `src` dir
 
 *   **Concept:** A mechanism where a new class (subclass or derived class) inherits properties and methods from an existing class (superclass or base class).
 *   **Example:**
-    *   `public class CS2_SkinRating extends JFrame`
-        *   The `CS2_SkinRating` class *is a* `JFrame`.
+    *   `public class CS2SkinRating extends JFrame`
+        *   The `CS2SkinRating` class *is a* `JFrame`.
     *   `public class TopBarPanel extends JPanel` (and similarly for `CardDisplayPanel`, `SkinCard`, `BottomBarPanel`)
         *   These custom panel classes *are* `JPanel`s, inheriting JPanel's functionalities and adding specialized content and behavior.
     *   `public class SidebarPanel extends Button`
@@ -38,7 +38,7 @@ The project, now structured across multiple Java files (located in the `src` dir
 
 *   **Concept:** Bundling data (attributes) and methods (functions) that operate on the data within a single unit (a class). It also involves restricting direct access to some of an object's components.
 *   **Example:**
-    *   The `CS2_SkinRating` class encapsulates instances of `TopBarPanel`, `SidebarPanel`, `JScrollPane` (which contains `CardDisplayPanel`), and `BottomBarPanel`.
+    *   The `CS2SkinRating` class encapsulates instances of `TopBarPanel`, `SidebarPanel`, `JScrollPane` (which contains `CardDisplayPanel`), and `BottomBarPanel`.
     *   Each specialized panel class (e.g., `TopBarPanel`) encapsulates its own UI components (like `JLabel` for the title, `JButton`s for Discord/Ko-Fi) and the logic for their setup and layout. For instance, the creation and styling of the "Join Discord" button are handled entirely within `TopBarPanel`.
     *   The `SkinCard` class encapsulates the image label and name label for a single skin, along with the logic to load and display the image.
 
@@ -48,19 +48,19 @@ The project, now structured across multiple Java files (located in the `src` dir
 *   **Example:**
     *   When you use `JButton button = new JButton("Click Me");`, you are interacting with an abstraction. You don't need to know how the button is drawn on the screen, how it handles mouse clicks at a low level, or how its text is rendered. You just use its methods like `setBackground()`, `setForeground()`, `addActionListener()`.
     *   The `JFrame` class itself abstracts the underlying windowing system of the operating system.
-    *   The `CS2_SkinRating` class, as a whole, provides an abstraction for a "skin rating application window."
+    *   The `CS2SkinRating` class, as a whole, provides an abstraction for a "skin rating application window."
 
 ### 5. Polymorphism (Many Forms)
 
 *   **Concept:** The ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
 *   **Examples:**
-    *   **Method Overriding:** While not explicitly overriding methods from `JFrame` in the provided constructor snippet (other than implicitly through its lifecycle), if `CS2_SkinRating` were to override a method like `paintComponent` (more common for `JPanel`), that would be polymorphism.
+    *   **Method Overriding:** While not explicitly overriding methods from `JFrame` in the provided constructor snippet (other than implicitly through its lifecycle), if `CS2SkinRating` were to override a method like `paintComponent` (more common for `JPanel`), that would be polymorphism.
     *   The `run()` method in the anonymous `Runnable` class:
         ```java
         SwingUtilities.invokeLater(new Runnable() {
             @Override // This annotation indicates overriding
             public void run() {
-                new CS2_SkinRating().setVisible(true);
+                new CS2SkinRating().setVisible(true);
             }
         });
         ```
@@ -71,7 +71,7 @@ The project, now structured across multiple Java files (located in the `src` dir
 
 *   **Concept:** Building complex objects by combining simpler objects. One object "has an" instance of another object.
 *   **Example:**
-    *   The `CS2_SkinRating` (which is a `JFrame`) *has a* `TopBarPanel`, a `SidebarPanel`, a `JScrollPane` (which in turn *has a* `CardDisplayPanel`), and a `BottomBarPanel`.
+    *   The `CS2SkinRating` (which is a `JFrame`) *has a* `TopBarPanel`, a `SidebarPanel`, a `JScrollPane` (which in turn *has a* `CardDisplayPanel`), and a `BottomBarPanel`.
         *   `mainPanel.add(topBarPanel, BorderLayout.NORTH);`
         *   `mainPanel.add(sidebarPanel, BorderLayout.WEST);`
     *   The `CardDisplayPanel` *has multiple* `SkinCard` objects.
@@ -96,9 +96,9 @@ To compile and run this project from your command line or terminal:
     (On Windows, you might also use `javac src\*.java`)
 
 3.  **Run the Application:**
-    After successful compilation, run the main application class (`CS2_SkinRating`). You need to specify the `src` directory in the classpath so that Java can find the compiled `.class` files.
+    After successful compilation, run the main application class (`CS2SkinRating`). You need to specify the `src` directory in the classpath so that Java can find the compiled `.class` files.
     ```bash
-    java -cp src CS2_SkinRating
+    java -cp src CS2SkinRating
     ```
 
 Make sure you have a Java Development Kit (JDK) installed and configured correctly on your system for these commands to work.

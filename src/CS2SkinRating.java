@@ -4,9 +4,9 @@ import java.awt.*;
 import javax.swing.WindowConstants; // Added for static access
 import javax.swing.ScrollPaneConstants; // Added for static access
 
-public class CS2_SkinRating extends JFrame {
+public class CS2SkinRating extends JFrame {
 
-    public CS2_SkinRating() {
+    public CS2SkinRating() {
         setTitle("CS2 Skin Rating");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
         setPreferredSize(new Dimension(1024, 768));
@@ -55,6 +55,6 @@ public class CS2_SkinRating extends JFrame {
 
     public static void main(String[] args) {
         // Run the GUI construction on the Event Dispatch Thread
-        SwingUtilities.invokeLater(() -> new CS2_SkinRating().setVisible(true)); // Changed to lambda
+        SwingUtilities.invokeLater(() -> new CS2SkinRating().setVisible(true)); // Changed to lambda
     }
 }
