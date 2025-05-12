@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class SidebarPanel extends Button { // Changed to extend Button
+public class SidebarPanel extends Button { 
 
     private final CardDisplayPanel cardDisplayPanel;
 

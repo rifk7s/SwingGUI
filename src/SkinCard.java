@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.Random;
+import java.awt.event.*;
+import java.util.*;
+// import java.awt.event.MouseAdapter;
+// import java.awt.event.MouseEvent;
+// import java.util.Random;
 
 public class SkinCard extends JPanel {
     private final Random random = new Random(); // Made Random an instance variable

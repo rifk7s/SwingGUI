@@ -1,8 +1,8 @@
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.*;
 import java.awt.*;
-import javax.swing.WindowConstants; // Added for static access
-import javax.swing.ScrollPaneConstants; // Added for static access
+// import javax.swing.WindowConstants; // Added for static access
+// import javax.swing.ScrollPaneConstants; // Added for static access
 
 public class CS2SkinRating extends JFrame {
 
