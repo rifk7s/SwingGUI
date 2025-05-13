@@ -6,7 +6,7 @@ public class SidebarPanel extends Button {
     private final CardDisplayPanel cardDisplayPanel;
 
     public SidebarPanel(CardDisplayPanel cardDisplayPanel) {
-        super(); // Calls Button constructor, which calls JPanel constructor and sets up layout/style
+        super(); // Memanggil konstruktor Button, yang memanggil konstruktor JPanel dan menyiapkan layout/style
         
         this.cardDisplayPanel = cardDisplayPanel;
 
@@ -18,9 +18,9 @@ public class SidebarPanel extends Button {
         int buttonHeightPadding = 10;
 
         for (String btnText : sidebarButtonLabels) {
-            JButton button = Button.createButton(btnText); // Use static factory from Button class
+            JButton button = Button.createButton(btnText); // Menggunakan factory statis dari kelas Button
 
-            button.addActionListener(e -> { // Lambda for ActionListener
+            button.addActionListener(e -> { // Lambda untuk ActionListener
                 String categoryToDisplay;
                 switch (btnText) {
                     case "Home":

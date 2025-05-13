@@ -5,20 +5,20 @@ public class Button extends JPanel {
 
     public Button() {
         super();
-        // Setup layout and styling properties
+        // Menyiapkan properti layout dan styling
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBackground(new Color(50, 50, 50)); 
-        setPreferredSize(new Dimension(170, 0)); // Sidebar width
+        setPreferredSize(new Dimension(170, 0)); // Lebar sidebar
         setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, new Color(40, 40, 40))); 
     }
 
-    // Factory method for creating a JButton with default styling
+    // Metode factory untuk membuat JButton dengan styling default
     public static JButton createButton(String text) {
-        // Default background color for most buttons
+        // Warna latar belakang default untuk sebagian besar tombol
         return createButton(text, new Color(75, 75, 75));
     }
 
-    // Factory method for creating a JButton with a custom background color
+    // Metode factory untuk membuat JButton dengan warna latar belakang kustom
     public static JButton createButton(String text, Color backgroundColor) {
         JButton button = new JButton(text);
         button.setBackground(backgroundColor);

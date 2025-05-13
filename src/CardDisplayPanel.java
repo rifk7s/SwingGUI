@@ -11,11 +11,11 @@ public class CardDisplayPanel extends JPanel {
         super(new GridLayout(0, 4, 10, 10));
         setBackground(new Color(65, 65, 65)); 
         setBorder(new EmptyBorder(10,10,10,10));
-        updateDisplay("AWP"); // Load AWP skins by default
+        updateDisplay("AWP"); // Memuat skin AWP secara default
     }
 
     public void updateDisplay(String category) {
-        removeAll(); // Clear existing cards
+        removeAll(); // Membersihkan kartu yang ada
 
         String[] imageFileNames;
         String imagePathPrefix;
@@ -42,7 +42,7 @@ public class CardDisplayPanel extends JPanel {
             };
             imagePathPrefix = "img" + File.separator + "Knife" + File.separator;
         } else {
-            // Default or empty state
+            // Status default atau kosong
             imageFileNames = new String[0];
             imagePathPrefix = "";
         }

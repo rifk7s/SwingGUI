@@ -1,8 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
-// import javax.swing.WindowConstants; // Added for static access
-// import javax.swing.ScrollPaneConstants; // Added for static access
+// import javax.swing.WindowConstants; // Ditambahkan untuk akses statis
+// import javax.swing.ScrollPaneConstants; // Ditambahkan untuk akses statis
 
 public class CS2SkinRating extends JFrame {
 
@@ -10,51 +10,51 @@ public class CS2SkinRating extends JFrame {
         setTitle("CS2 Skin Rating");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
         setPreferredSize(new Dimension(1024, 768));
-        getContentPane().setBackground(new Color(45, 45, 45)); // Dark gray background
+        getContentPane().setBackground(new Color(45, 45, 45)); // Latar belakang abu-abu gelap
 
-        // Main panel with BorderLayout
-        JPanel mainPanel = new JPanel(new BorderLayout(10, 10)); //Gaps
+        // Panel utama dengan BorderLayout
+        JPanel mainPanel = new JPanel(new BorderLayout(10, 10)); // Jarak
         mainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         mainPanel.setBackground(new Color(50, 50, 50)); 
         getContentPane().add(mainPanel);
 
-        // Top Bar Panel
+        // Panel Bar Atas
         TopBarPanel topBarPanel = new TopBarPanel();
         mainPanel.add(topBarPanel, BorderLayout.NORTH);
 
-        // Content Panel with Cards
+        // Panel Konten dengan Kartu
         CardDisplayPanel cardDisplayPanel = new CardDisplayPanel();
 
-        // Sidebar Panel
-        SidebarPanel sidebarPanel = new SidebarPanel(cardDisplayPanel); // Pass cardDisplayPanel
+        // Panel Sidebar
+        SidebarPanel sidebarPanel = new SidebarPanel(cardDisplayPanel); // Meneruskan cardDisplayPanel
 
-        // Scrollbar for Content Panel
+        // Scrollbar untuk Panel Konten
         JScrollPane scrollPane = new JScrollPane(cardDisplayPanel);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED); 
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER); 
-        scrollPane.setBorder(BorderFactory.createEmptyBorder()); // Remove default border
-        scrollPane.getVerticalScrollBar().setUnitIncrement(16); // Improve scroll speed
+        scrollPane.setBorder(BorderFactory.createEmptyBorder()); // Menghapus border default
+        scrollPane.getVerticalScrollBar().setUnitIncrement(16); // Meningkatkan kecepatan scroll
 
-        // Split Pane for Sidebar and Content
+        // Split Pane untuk Sidebar dan Konten
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, sidebarPanel, scrollPane);
-        splitPane.setDividerLocation(170); // Initial width for the sidebar + some padding
-        splitPane.setDividerSize(2); // Adjust Divider Size into any pixel () value
-        splitPane.setBorder(BorderFactory.createEmptyBorder()); // Remove split pane border if desired
-        splitPane.setContinuousLayout(true); // Optional: updates layout continuously while dragging
-        splitPane.setResizeWeight(0); // Optional: sidebar width is fixed, content area resizes
+        splitPane.setDividerLocation(170); // Lebar awal untuk sidebar + beberapa padding
+        splitPane.setDividerSize(2); // Menyesuaikan ukuran pembagi ke piksel berapa pun
+        splitPane.setBorder(BorderFactory.createEmptyBorder()); // Menghapus border split pane jika diinginkan
+        splitPane.setContinuousLayout(true); // Opsional: memperbarui layout secara kontinu saat menyeret
+        splitPane.setResizeWeight(0); // Opsional: lebar sidebar tetap, area konten dapat diubah ukurannya
 
-        mainPanel.add(splitPane, BorderLayout.CENTER); // Add JSplitPane instead of sidebar and scrollpane directly
+        mainPanel.add(splitPane, BorderLayout.CENTER); // Menambahkan JSplitPane sebagai gantinya sidebar dan scrollpane secara langsung
 
-        // Bottom Button Panel (South)
+        // Panel Tombol Bawah (Selatan)
         BottomBarPanel bottomBarPanel = new BottomBarPanel();
         mainPanel.add(bottomBarPanel, BorderLayout.SOUTH);
 
         pack();
-        setLocationRelativeTo(null); // Center window
+        setLocationRelativeTo(null); // Menempatkan jendela di tengah
     }
 
     public static void main(String[] args) {
-        // Run the GUI construction on the Event Dispatch Thread
-        SwingUtilities.invokeLater(() -> new CS2SkinRating().setVisible(true)); // Changed to lambda
+        // Menjalankan konstruksi GUI pada Event Dispatch Thread
+        SwingUtilities.invokeLater(() -> new CS2SkinRating().setVisible(true)); // Diubah ke lambda
     }
 }
