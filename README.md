@@ -81,6 +81,20 @@ Project ini, yang sekarang terstruktur dalam beberapa file Java (terletak di dir
 
 Aplikasi ini secara efektif menggunakan prinsip-prinsip OOP ini untuk membuat struktur GUI yang modular, dapat dipelihara, dan dapat diperluas.
 
+## Struktur Komponen UI
+
+Berikut adalah representasi hierarki komponen UI utama dalam aplikasi:
+
+```
+CS2SkinRating (extends JFrame)
+├── TopBarPanel (extends JPanel)
+├── SidebarPanel (extends custom Button)
+├── CardDisplayPanel (extends JPanel)
+│   └── SkinCard[] (extends JPanel)
+├── BottomBarPanel (extends JPanel)
+└── Button (utility class)
+```
+
 ## Kompilasi dan Menjalankan dari Command Line
 
 Untuk mengompilasi dan menjalankan Project ini dari Command Line atau Terminal:
