@@ -1,104 +1,104 @@
-# CS2 Skin Rating GUI
+# Aplikasi GUI Rating Skin CS2
 
-This project is a Java Swing application designed to display and allow users to rate CS2 (Counter-Strike 2) weapon skins. It features a dark-themed user interface with a title bar, a sidebar for navigation (e.g., by weapon type), a central content area displaying skin images and names in a card layout, and a bottom panel for actions like rating or saving.
+Proyek ini adalah aplikasi Java Swing yang dirancang untuk menampilkan dan memungkinkan pengguna menilai skin senjata CS2 (Counter-Strike 2). Fitur aplikasi ini mencakup antarmuka pengguna bertema gelap dengan bar judul, bilah samping untuk navigasi (misalnya, berdasarkan jenis senjata), area konten utama yang menampilkan gambar dan nama skin dalam tata letak kartu, dan panel bawah untuk tindakan seperti memberi rating atau menyimpan.
 
 ## Showcase
 
-![Application Screenshot](img/showcase/Screenshot.png)
+![Screenshot Aplikasi](img/showcase/Screenshot.png)
 
-## Object-Oriented Programming (OOP) Concepts Utilized
+## Konsep Pemrograman Berorientasi Objek (OOP) yang Digunakan
 
-The project, now structured across multiple Java files (located in the `src` directory: `src/CS2SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`), demonstrates several key OOP concepts:
+Project ini, yang sekarang terstruktur dalam beberapa file Java (terletak di direktori `src`: `src/CS2SkinRating.java`, `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`), mendemonstrasikan beberapa konsep OOP kunci:
 
-### 1. Classes and Objects
+### 1. Class dan Object
 
-*   **Class:** A blueprint for creating objects.
-    *   `src/CS2SkinRating.java`: The main application window class.
-    *   `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`: Custom classes representing different UI sections or components. Each encapsulates its specific structure and behavior.
-    *   Swing classes like `JFrame`, `JPanel`, `JButton`, `JLabel`, etc., are used extensively.
-*   **Object:** An instance of a class.
-    *   `new CS2SkinRating()`: Creates an instance of the main application window.
-    *   `TopBarPanel topBarPanel = new TopBarPanel()`: Creates an instance of the `TopBarPanel`.
-    *   `SkinCard card = new SkinCard(...)`: Creates an instance of a `SkinCard`.
+*   **Class:** Blueprint untuk membuat objek.
+    *   `src/CS2SkinRating.java`: Kelas jendela aplikasi utama.
+    *   `src/TopBarPanel.java`, `src/SidebarPanel.java`, `src/Button.java`, `src/CardDisplayPanel.java`, `src/SkinCard.java`, `src/BottomBarPanel.java`: Kelas kustom yang mewakili berbagai bagian atau komponen UI. Masing-masing mengenkapsulasi struktur dan perilaku spesifiknya.
+    *   Kelas Swing seperti `JFrame`, `JPanel`, `JButton`, `JLabel`, dll., digunakan secara ekstensif.
+*   **Object:** Instance dari sebuah kelas.
+    *   `new CS2SkinRating()`: Membuat instance dari jendela aplikasi utama.
+    *   `TopBarPanel topBarPanel = new TopBarPanel()`: Membuat instance dari `TopBarPanel`.
+    *   `SkinCard card = new SkinCard(...)`: Membuat instance dari `SkinCard`.
 
-### 2. Inheritance (IS-A Relationship)
+### 2. Pewarisan (Relasi IS-A)
 
-*   **Concept:** A mechanism where a new class (subclass or derived class) inherits properties and methods from an existing class (superclass or base class).
-*   **Example:**
+*   **Konsep:** Mekanisme di mana kelas baru (subclass atau kelas turunan) mewarisi properti dan metode dari kelas yang sudah ada (superclass atau kelas dasar).
+*   **Contoh:**
     *   `public class CS2SkinRating extends JFrame`
-        *   The `CS2SkinRating` class *is a* `JFrame`.
-    *   `public class TopBarPanel extends JPanel` (and similarly for `CardDisplayPanel`, `SkinCard`, `BottomBarPanel`)
-        *   These custom panel classes *are* `JPanel`s, inheriting JPanel's functionalities and adding specialized content and behavior.
+        *   Kelas `CS2SkinRating` *adalah* `JFrame`.
+    *   `public class TopBarPanel extends JPanel` (dan serupa untuk `CardDisplayPanel`, `SkinCard`, `BottomBarPanel`)
+        *   Kelas panel kustom ini *adalah* `JPanel`, mewarisi fungsionalitas JPanel dan menambahkan konten dan perilaku khusus.
     *   `public class SidebarPanel extends Button`
-        *   The `SidebarPanel` class *is a* `Button`.
+        *   Kelas `SidebarPanel` *adalah* `Button`.
     *   `public class Button extends JPanel`
-        *   The `Button` class *is a* `JPanel`.
+        *   Kelas `Button` *adalah* `JPanel`.
 
-### 3. Encapsulation
+### 3. Enkapsulasi
 
-*   **Concept:** Bundling data (attributes) and methods (functions) that operate on the data within a single unit (a class). It also involves restricting direct access to some of an object's components.
-*   **Example:**
-    *   The `CS2SkinRating` class encapsulates instances of `TopBarPanel`, `SidebarPanel`, `JScrollPane` (which contains `CardDisplayPanel`), and `BottomBarPanel`.
-    *   Each specialized panel class (e.g., `TopBarPanel`) encapsulates its own UI components (like `JLabel` for the title, `JButton`s for Discord/Ko-Fi) and the logic for their setup and layout. For instance, the creation and styling of the "Join Discord" button are handled entirely within `TopBarPanel`.
-    *   The `SkinCard` class encapsulates the image label and name label for a single skin, along with the logic to load and display the image.
+*   **Konsep:** Menggabungkan data (atribut) dan metode (fungsi) yang beroperasi pada data di dalam satu unit (sebuah kelas). Ini juga melibatkan pembatasan akses langsung ke beberapa komponen objek.
+*   **Contoh:**
+    *   Kelas `CS2SkinRating` mengenkapsulasi instance dari `TopBarPanel`, `SidebarPanel`, `JScrollPane` (yang berisi `CardDisplayPanel`), dan `BottomBarPanel`.
+    *   Setiap kelas panel khusus (misalnya, `TopBarPanel`) mengenkapsulasi komponen UI-nya sendiri (seperti `JLabel` untuk judul, `JButton` untuk Discord/Ko-Fi) dan logika untuk pengaturan dan tata letaknya. Misalnya, pembuatan dan styling tombol "Join Discord" sepenuhnya ditangani dalam `TopBarPanel`.
+    *   Kelas `SkinCard` mengenkapsulasi label gambar dan label nama untuk satu skin, beserta logika untuk memuat dan menampilkan gambar.
 
-### 4. Abstraction
+### 4. Abstraksi
 
-*   **Concept:** Hiding complex implementation details and showing only the essential features of an object. It helps in managing complexity by providing a simplified view.
-*   **Example:**
-    *   When you use `JButton button = new JButton("Click Me");`, you are interacting with an abstraction. You don't need to know how the button is drawn on the screen, how it handles mouse clicks at a low level, or how its text is rendered. You just use its methods like `setBackground()`, `setForeground()`, `addActionListener()`.
-    *   The `JFrame` class itself abstracts the underlying windowing system of the operating system.
-    *   The `CS2SkinRating` class, as a whole, provides an abstraction for a "skin rating application window."
+*   **Konsep:** Menyembunyikan detail implementasi yang kompleks dan hanya menunjukkan fitur-fitur penting dari sebuah objek. Ini membantu dalam mengelola kompleksitas dengan menyediakan tampilan yang disederhanakan.
+*   **Contoh:**
+    *   Ketika Anda menggunakan `JButton button = new JButton("Click Me");`, Anda berinteraksi dengan sebuah abstraksi. Anda tidak perlu tahu bagaimana tombol digambar di layar, bagaimana tombol menangani klik mouse pada level rendah, atau bagaimana teksnya dirender. Anda hanya menggunakan metode-metodenya seperti `setBackground()`, `setForeground()`, `addActionListener()`.
+    *   Kelas `JFrame` sendiri mengabstraksi sistem jendela dasar dari sistem operasi.
+    *   Kelas `CS2SkinRating`, secara keseluruhan, menyediakan abstraksi untuk "jendela aplikasi rating skin."
 
-### 5. Polymorphism (Many Forms)
+### 5. Polimorfisme (Banyak Bentuk)
 
-*   **Concept:** The ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
-*   **Examples:**
-    *   **Method Overriding:** While not explicitly overriding methods from `JFrame` in the provided constructor snippet (other than implicitly through its lifecycle), if `CS2SkinRating` were to override a method like `paintComponent` (more common for `JPanel`), that would be polymorphism.
-    *   The `run()` method in the anonymous `Runnable` class:
+*   **Konsep:** Kemampuan sebuah objek untuk mengambil banyak bentuk. Penggunaan polimorfisme yang paling umum dalam OOP terjadi ketika referensi kelas induk digunakan untuk merujuk ke objek kelas anak.
+*   **Contoh:**
+    *   **Method Overriding:** Meskipun tidak secara eksplisit meng-override metode dari `JFrame` dalam cuplikan constructor yang diberikan (selain secara implisit melalui siklus hidupnya), jika `CS2SkinRating` akan meng-override metode seperti `paintComponent` (lebih umum untuk `JPanel`), itu akan menjadi polimorfisme.
+    *   Metode `run()` dalam kelas anonymous `Runnable`:
         ```java
         SwingUtilities.invokeLater(new Runnable() {
-            @Override // This annotation indicates overriding
+            @Override // Anotasi ini menunjukkan overriding
             public void run() {
                 new CS2SkinRating().setVisible(true);
             }
         });
         ```
-        The `run()` method is defined in the `Runnable` interface, and the anonymous class provides a specific implementation for it.
-    *   **Component Addition:** Methods like `mainPanel.add(component, constraint)` can accept any object that *is a* `Component` (e.g., `JPanel`, `JLabel`, `JButton`). The `add` method behaves polymorphically based on the actual type of component being added.
+        Metode `run()` didefinisikan dalam interface `Runnable`, dan kelas anonymous memberikan implementasi spesifik untuknya.
+    *   **Penambahan Komponen:** Metode seperti `mainPanel.add(component, constraint)` dapat menerima objek apa pun yang *adalah* `Component` (mis., `JPanel`, `JLabel`, `JButton`). Metode `add` berperilaku secara polimorfik berdasarkan tipe sebenarnya dari komponen yang ditambahkan.
 
-### 6. Composition (HAS-A Relationship)
+### 6. Komposisi (Relasi HAS-A)
 
-*   **Concept:** Building complex objects by combining simpler objects. One object "has an" instance of another object.
-*   **Example:**
-    *   The `CS2SkinRating` (which is a `JFrame`) *has a* `TopBarPanel`, a `SidebarPanel`, a `JScrollPane` (which in turn *has a* `CardDisplayPanel`), and a `BottomBarPanel`.
+*   **Konsep:** Membangun objek yang kompleks dengan menggabungkan objek-objek yang lebih sederhana. Satu objek "memiliki" instance dari objek lain.
+*   **Contoh:**
+    *   `CS2SkinRating` (yang merupakan `JFrame`) *memiliki* `TopBarPanel`, `SidebarPanel`, `JScrollPane` (yang pada gilirannya *memiliki* `CardDisplayPanel`), dan `BottomBarPanel`.
         *   `mainPanel.add(topBarPanel, BorderLayout.NORTH);`
         *   `mainPanel.add(sidebarPanel, BorderLayout.WEST);`
-    *   The `CardDisplayPanel` *has multiple* `SkinCard` objects.
-        *   `add(card);` (within `CardDisplayPanel`'s loop)
-    *   The `TopBarPanel` *has a* `JLabel` (`titleLabel`) and another `JPanel` (`topRightButtonsPanel`).
-    *   This demonstrates how the main application window is composed of several distinct, manageable UI panel objects, each responsible for a part of the overall interface.
+    *   `CardDisplayPanel` *memiliki beberapa* objek `SkinCard`.
+        *   `add(card);` (dalam loop `CardDisplayPanel`)
+    *   `TopBarPanel` *memiliki* `JLabel` (`titleLabel`) dan `JPanel` lain (`topRightButtonsPanel`).
+    *   Ini menunjukkan bagaimana jendela aplikasi utama terdiri dari beberapa objek panel UI yang berbeda, masing-masing bertanggung jawab atas bagian dari antarmuka secara keseluruhan.
 
-This application effectively uses these OOP principles to create a modular, maintainable, and extensible GUI structure.
+Aplikasi ini secara efektif menggunakan prinsip-prinsip OOP ini untuk membuat struktur GUI yang modular, dapat dipelihara, dan dapat diperluas.
 
-## Compiling and Running from the Command Line
+## Kompilasi dan Menjalankan dari Baris Perintah
 
-To compile and run this project from your command line or terminal:
+Untuk mengompilasi dan menjalankan proyek ini dari baris perintah atau terminal:
 
-1.  **Navigate to the Project Root:**
-    Open your terminal or command prompt and navigate to the root directory of the project (e.g., `c:\Users\rifk\Desktop\OOP\SwingGui\`).
+1.  **Navigasi ke Root Proyek:**
+    Buka terminal atau command prompt dan navigasikan ke direktori root proyek (mis., `c:\Users\rifk\Desktop\OOP\SwingGui\`).
 
-2.  **Compile the Java Files:**
-    All Java source files are located in the `src` directory. Use the following command to compile them. The compiled `.class` files will also be placed in the `src` directory.
+2.  **Kompilasi File Java:**
+    Semua file sumber Java terletak di direktori `src`. Gunakan perintah berikut untuk mengompilasinya. File `.class` yang terkompilasi juga akan ditempatkan di direktori `src`.
     ```bash
     javac src/*.java
     ```
-    (On Windows, you might also use `javac src\*.java`)
+    (Di Windows, Anda mungkin juga menggunakan `javac src\*.java`)
 
-3.  **Run the Application:**
-    After successful compilation, run the main application class (`CS2SkinRating`). You need to specify the `src` directory in the classpath so that Java can find the compiled `.class` files.
+3.  **Jalankan Aplikasi:**
+    Setelah kompilasi berhasil, jalankan kelas aplikasi utama (`CS2SkinRating`). Anda perlu menentukan direktori `src` dalam classpath agar Java dapat menemukan file `.class` yang terkompilasi.
     ```bash
     java -cp src CS2SkinRating
     ```
 
-Make sure you have a Java Development Kit (JDK) installed and configured correctly on your system for these commands to work.
+Pastikan Anda memiliki Java Development Kit (JDK) yang terinstal dan dikonfigurasi dengan benar di sistem Anda agar perintah-perintah ini berfungsi.
