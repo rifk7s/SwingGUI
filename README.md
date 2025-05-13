@@ -1,6 +1,6 @@
 # Aplikasi GUI Rating Skin CS2
 
-Proyek ini adalah aplikasi Java Swing yang dirancang untuk menampilkan dan memungkinkan pengguna menilai skin senjata CS2 (Counter-Strike 2). Fitur aplikasi ini mencakup antarmuka pengguna bertema gelap dengan bar judul, bilah samping untuk navigasi (misalnya, berdasarkan jenis senjata), area konten utama yang menampilkan gambar dan nama skin dalam tata letak kartu, dan panel bawah untuk tindakan seperti memberi rating atau menyimpan.
+Project ini adalah aplikasi Java Swing yang dirancang untuk menampilkan dan memungkinkan pengguna menilai skin senjata CS2 (Counter-Strike 2). Fitur aplikasi ini mencakup antarmuka pengguna bertema gelap dengan bar judul, bilah samping untuk navigasi (misalnya, berdasarkan jenis senjata), area konten utama yang menampilkan gambar dan nama skin dalam tata letak kartu, dan panel bawah untuk tindakan seperti memberi rating atau menyimpan.
 
 ## Showcase
 
@@ -81,12 +81,12 @@ Project ini, yang sekarang terstruktur dalam beberapa file Java (terletak di dir
 
 Aplikasi ini secara efektif menggunakan prinsip-prinsip OOP ini untuk membuat struktur GUI yang modular, dapat dipelihara, dan dapat diperluas.
 
-## Kompilasi dan Menjalankan dari Baris Perintah
+## Kompilasi dan Menjalankan dari Command Line
 
-Untuk mengompilasi dan menjalankan proyek ini dari baris perintah atau terminal:
+Untuk mengompilasi dan menjalankan Project ini dari Command Line atau Terminal:
 
-1.  **Navigasi ke Root Proyek:**
-    Buka terminal atau command prompt dan navigasikan ke direktori root proyek (mis., `c:\Users\rifk\Desktop\OOP\SwingGui\`).
+1.  **Navigasi ke Root Project:**
+    Buka terminal atau command prompt dan navigasikan ke direktori root Project (mis., `c:\Users\rifk\Desktop\OOP\SwingGui\`).
 
 2.  **Kompilasi File Java:**
     Semua file sumber Java terletak di direktori `src`. Gunakan perintah berikut untuk mengompilasinya. File `.class` yang terkompilasi juga akan ditempatkan di direktori `src`.
